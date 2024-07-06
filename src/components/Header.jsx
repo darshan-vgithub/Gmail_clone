@@ -5,6 +5,9 @@ import {
   Search,
   Tune,
   HelpOutlineOutlined,
+  SettingsOutlined,
+  AppsOutlined,
+  AccountCircleOutlined,
 } from "@mui/icons-material";
 import { gmailLogo } from "../constants/constants";
 
@@ -29,6 +32,15 @@ const SearchWrapper = styled(Box)({
     padding: "0 10px",
   },
 });
+
+const OptionsWrapper = styled(Box)({
+  width: "100%",
+  display: "flex",
+  justifyContent: "end",
+  '&>svg':{
+    marginLeft:20
+  }
+});
 const Header = () => {
   return (
     <StyledAppBar position="static">
@@ -44,9 +56,12 @@ const Header = () => {
           <InputBase placeholder="Search mail" />
           <Tune color="action" />
         </SearchWrapper>
-        <div>
+        <OptionsWrapper>
           <HelpOutlineOutlined color="action" />
-        </div>
+          <SettingsOutlined color="action" />
+          <AppsOutlined color="action" />
+          <AccountCircleOutlined color="action" />
+        </OptionsWrapper>
       </Toolbar>
     </StyledAppBar>
   );
