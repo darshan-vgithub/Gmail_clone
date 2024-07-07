@@ -37,15 +37,19 @@ const OptionsWrapper = styled(Box)({
   width: "100%",
   display: "flex",
   justifyContent: "end",
-  '&>svg':{
-    marginLeft:20
-  }
+  "&>svg": {
+    marginLeft: 20,
+  },
 });
-const Header = () => {
+const Header = ({ toggleDrawer }) => {
   return (
     <StyledAppBar position="static">
       <Toolbar>
-        <MenuIcon color="action" />
+        <MenuIcon
+          color="action"
+          onClick={toggleDrawer}
+          style={{ cursor: "pointer" }}
+        />
         <img
           src={gmailLogo}
           alt="logo"
